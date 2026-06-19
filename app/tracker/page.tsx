@@ -226,7 +226,7 @@ export default function TrackerPage() {
   if (!isMounted) {
     return (
       <div className="flex flex-1 items-center justify-center p-12">
-        <div className="h-10 w-10 rounded-full border border-dashed border-[#2d5a27] animate-spin" />
+        <div className="h-10 w-10 rounded-full border border-dashed border-[#2D6A4F] animate-spin" />
       </div>
     );
   }
@@ -234,19 +234,19 @@ export default function TrackerPage() {
   return (
     <div className="flex-1 space-y-8 p-6 md:p-10 max-w-4xl mx-auto">
       {/* Page Title & Controls */}
-      <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between border-b border-[#1e3124]/10 dark:border-white/10 pb-6">
+      <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between border-b border-[#2D6A4F]/10 dark:border-white/10 pb-6">
         <div>
-          <h1 className="text-2xl md:text-3xl font-bold text-[#1e3124] dark:text-[#f2f5f3]">
+          <h1 className="text-2xl md:text-3xl font-bold text-[#2D6A4F] dark:text-[#52B788]">
             Daily Quest Board
           </h1>
-          <p className="text-xxxxs tracking-wider uppercase text-[#4a5f4e] dark:text-[#a2b5a5] mt-1 font-bold">
+          <p className="text-xxxxs tracking-wider uppercase text-zinc-450 dark:text-[#A0AEC0] mt-1 font-bold">
             Earn streak points and decrease emissions by logging daily environmental tasks.
           </p>
         </div>
         <div className="flex gap-2">
           <button
             onClick={handleResetQuests}
-            className="flex items-center justify-center gap-2 rounded-full border border-zinc-200 dark:border-zinc-800 bg-transparent px-4 py-2.5 text-xxxxs font-bold tracking-[0.2em] uppercase text-zinc-650 dark:text-zinc-350 hover:bg-zinc-50 dark:hover:bg-zinc-900 cursor-pointer"
+            className="flex items-center justify-center gap-2 rounded-full border border-zinc-200 dark:border-zinc-800 bg-transparent px-4 py-2.5 text-xxxxs font-bold tracking-[0.2em] uppercase text-[#2D6A4F] hover:bg-[#2D6A4F] hover:text-white dark:text-zinc-350 dark:hover:bg-[#52B788] dark:hover:text-[#0A0F0D] transition-all duration-300 cursor-pointer"
             title="Reset all tasks to unchecked"
           >
             <RefreshCw className="h-3.5 w-3.5" />
@@ -254,7 +254,7 @@ export default function TrackerPage() {
           </button>
           <button
             onClick={handleCompleteAll}
-            className="rounded-full bg-[#1e3124] hover:bg-[#2d5a27] text-white dark:bg-[#f2f5f3] dark:hover:bg-[#d6ded9] dark:text-[#1e3124] px-5 py-2.5 text-xxxxs font-bold tracking-[0.2em] uppercase cursor-pointer"
+            className="rounded-full bg-[#2D6A4F] hover:bg-[#1B4332] text-white dark:bg-[#52B788] dark:hover:bg-[#40916C] dark:text-[#0A0F0D] px-5 py-2.5 text-xxxxs font-bold tracking-[0.2em] uppercase cursor-pointer transition-all duration-300"
           >
             Complete All
           </button>
@@ -264,16 +264,16 @@ export default function TrackerPage() {
       {/* 1. Daily Progress Header Card */}
       <div className="grid gap-6 sm:grid-cols-3">
         {/* Streak score Card */}
-        <div className="relative overflow-hidden rounded-3xl glass-card p-6 border border-white/20">
+        <div className="relative overflow-hidden rounded-3xl glass-card p-6">
           <div className="flex items-center gap-3">
-            <div className="h-8 w-8 flex items-center justify-center rounded-full glass-button text-orange-600 dark:text-orange-400 shrink-0">
+            <div className="h-8 w-8 flex items-center justify-center rounded-full glass-button text-orange-500 shrink-0">
               <Flame className="h-4 w-4 fill-orange-500/10" />
             </div>
             <div>
               <span className="text-xxxxs font-bold text-zinc-400 dark:text-zinc-500 uppercase tracking-[0.2em] block">
                 Active Streak
               </span>
-              <p className="text-lg font-bold text-[#1e3124] dark:text-[#f2f5f3] mt-1">
+              <p className="text-lg font-bold text-[#2D6A4F] dark:text-[#52B788] mt-1">
                 {streak} Days
               </p>
             </div>
@@ -281,16 +281,16 @@ export default function TrackerPage() {
         </div>
 
         {/* CO2 Avoided Card */}
-        <div className="relative overflow-hidden rounded-3xl glass-card p-6 border border-white/20">
+        <div className="relative overflow-hidden rounded-3xl glass-card p-6">
           <div className="flex items-center gap-3">
-            <div className="h-8 w-8 flex items-center justify-center rounded-full glass-button text-emerald-600 dark:text-emerald-400 shrink-0">
+            <div className="h-8 w-8 flex items-center justify-center rounded-full glass-button text-[#2D6A4F] dark:text-[#52B788] hover:bg-[#2D6A4F] hover:text-white transition-all duration-300 shrink-0">
               <Leaf className="h-4 w-4" />
             </div>
             <div>
               <span className="text-xxxxs font-bold text-zinc-400 dark:text-zinc-500 uppercase tracking-[0.2em] block">
                 CO2 Avoided Today
               </span>
-              <p className="text-lg font-bold text-[#1e3124] dark:text-[#f2f5f3] mt-1">
+              <p className="text-lg font-bold text-[#2D6A4F] dark:text-[#52B788] mt-1">
                 {co2AvoidedToday} kg CO2e
               </p>
             </div>
@@ -298,16 +298,16 @@ export default function TrackerPage() {
         </div>
 
         {/* Streak Points score Card */}
-        <div className="relative overflow-hidden rounded-3xl glass-card p-6 border border-white/20">
+        <div className="relative overflow-hidden rounded-3xl glass-card p-6">
           <div className="flex items-center gap-3">
-            <div className="h-8 w-8 flex items-center justify-center rounded-full glass-button text-cyan-600 dark:text-cyan-400 shrink-0">
+            <div className="h-8 w-8 flex items-center justify-center rounded-full glass-button text-[#2D6A4F] dark:text-[#52B788] hover:bg-[#2D6A4F] hover:text-white transition-all duration-300 shrink-0">
               <Award className="h-4 w-4" />
             </div>
             <div>
               <span className="text-xxxxs font-bold text-zinc-400 dark:text-zinc-500 uppercase tracking-[0.2em] block">
                 Streak Points
               </span>
-              <p className="text-lg font-bold text-[#1e3124] dark:text-[#f2f5f3] mt-1">
+              <p className="text-lg font-bold text-[#2D6A4F] dark:text-[#52B788] mt-1">
                 {points.toLocaleString()} pts
               </p>
             </div>
@@ -316,7 +316,7 @@ export default function TrackerPage() {
       </div>
 
       {/* Progress Completion Indicator */}
-      <div className="rounded-3xl glass-card p-5 border border-white/20">
+      <div className="rounded-3xl glass-card p-5">
         <div className="flex justify-between items-center text-xxxxs font-bold uppercase tracking-[0.2em] text-zinc-400 dark:text-zinc-500 mb-3">
           <span>Overall Daily Quests</span>
           <span className="text-zinc-950 dark:text-white font-bold">
@@ -325,14 +325,14 @@ export default function TrackerPage() {
         </div>
         <div className="h-2 w-full bg-zinc-200 dark:bg-zinc-850 rounded-full overflow-hidden">
           <div
-            className="h-full bg-[#2d5a27] dark:bg-[#a3b899] rounded-full transition-all duration-500"
+            className="h-full bg-[#2D6A4F] dark:bg-[#52B788] rounded-full transition-all duration-500"
             style={{ width: `${(completedTasks.length / totalTasksCount) * 100}%` }}
           />
         </div>
       </div>
 
       {/* 2. Interactive Task Matrix Tabs */}
-      <div className="flex gap-2 border-b border-[#1e3124]/10 dark:border-white/10 pb-2">
+      <div className="flex gap-2 border-b border-[#2D6A4F]/10 dark:border-white/10 pb-2">
         {(["Low", "Medium", "High"] as const).map((group) => {
           const isActive = activeTab === group;
           return (
@@ -341,8 +341,8 @@ export default function TrackerPage() {
               onClick={() => setActiveTab(group)}
               className={`rounded-full px-5 py-2 text-xxxxs font-bold tracking-[0.2em] uppercase transition-all cursor-pointer border ${
                 isActive
-                  ? "bg-[#2d5a27] text-white border-[#2d5a27] dark:bg-white dark:text-[#1e3124]"
-                  : "bg-transparent text-zinc-500 hover:text-zinc-800 dark:text-zinc-400 dark:hover:text-zinc-200 border-transparent"
+                  ? "bg-[#2D6A4F] text-white border-[#2D6A4F] dark:bg-white dark:text-[#2D6A4F]"
+                  : "bg-transparent text-[#2D6A4F] hover:bg-[#2D6A4F] hover:text-white border-transparent transition-all duration-300"
               }`}
             >
               {group} Impact
@@ -353,11 +353,11 @@ export default function TrackerPage() {
 
       {/* 4. Smooth Empty State vs Task List matrix */}
       {isAllCleared ? (
-        <div className="flex flex-col items-center justify-center py-16 px-6 text-center rounded-3xl glass-card border border-white/20">
-          <div className="flex h-12 w-12 items-center justify-center rounded-full glass-button mb-6 text-emerald-600 dark:text-emerald-400">
+        <div className="flex flex-col items-center justify-center py-16 px-6 text-center rounded-3xl glass-card">
+          <div className="flex h-12 w-12 items-center justify-center rounded-full glass-button mb-6 text-[#2D6A4F] dark:text-[#52B788] hover:text-white hover:bg-[#2D6A4F] transition-colors duration-300">
             <Sparkles className="h-5 w-5" />
           </div>
-          <h2 className="text-xs font-bold tracking-[0.15em] text-[#1e3124] dark:text-[#f2f5f3] uppercase font-sans">
+          <h2 className="text-xs font-bold tracking-[0.15em] text-[#2D6A4F] dark:text-[#52B788] uppercase font-sans">
             All Quests Cleared!
           </h2>
           <p className="text-xxxxs tracking-wider uppercase text-zinc-400 dark:text-zinc-500 max-w-sm mt-3 mb-6 leading-relaxed font-bold">
@@ -365,7 +365,7 @@ export default function TrackerPage() {
           </p>
           <button
             onClick={handleResetQuests}
-            className="rounded-full glass-button px-5 py-2.5 text-xxxxs font-bold tracking-[0.2em] uppercase text-zinc-700 dark:text-zinc-350 cursor-pointer"
+            className="rounded-full glass-button px-5 py-2.5 text-[#2D6A4F] hover:bg-[#2D6A4F] hover:text-white dark:text-zinc-350 dark:hover:bg-[#52B788] dark:hover:text-[#0A0F0D] transition-all duration-300 cursor-pointer"
           >
             Reset for Demo
           </button>
@@ -391,8 +391,8 @@ export default function TrackerPage() {
                 onClick={() => toggleTask(task.id)}
                 className={`group flex items-center justify-between rounded-3xl border p-5 transition-all duration-300 cursor-pointer select-none ${
                   task.completed
-                    ? "border-emerald-500/20 bg-emerald-500/[0.01] opacity-60 dark:opacity-40"
-                    : "glass-card border border-white/20"
+                    ? "border-[#2D6A4F]/20 bg-[#2D6A4F]/[0.01] opacity-60 dark:opacity-40"
+                    : "glass-card"
                 }`}
               >
                 <div className="flex items-start gap-4">
@@ -400,8 +400,8 @@ export default function TrackerPage() {
                   <div
                     className={`mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-lg border transition-all duration-300 ${
                       task.completed
-                        ? "border-[#2d5a27] bg-[#2d5a27] text-white dark:border-[#a3b899] dark:bg-[#a3b899] dark:text-[#1e3124]"
-                        : "border-zinc-300 bg-transparent group-hover:border-[#2d5a27] dark:border-zinc-800 dark:group-hover:border-[#a3b899]"
+                        ? "border-[#2D6A4F] bg-[#2D6A4F] text-white dark:border-[#52B788] dark:bg-[#52B788] dark:text-[#0A0F0D]"
+                        : "border-zinc-300 bg-transparent group-hover:border-[#2D6A4F] dark:border-zinc-800 dark:group-hover:border-[#52B788]"
                     }`}
                   >
                     {task.completed && <Check className="h-3.5 w-3.5 stroke-[3]" />}
@@ -411,8 +411,8 @@ export default function TrackerPage() {
                     <h4
                       className={`text-xs font-bold uppercase tracking-wide transition-all ${
                         task.completed
-                          ? "text-zinc-455 line-through dark:text-zinc-600"
-                          : "text-zinc-850 dark:text-zinc-200 group-hover:text-[#2d5a27] dark:group-hover:text-white"
+                          ? "text-zinc-455 line-through dark:text-zinc-650"
+                          : "text-zinc-850 dark:text-zinc-200 group-hover:text-[#2D6A4F] dark:group-hover:text-white"
                       }`}
                     >
                       {task.title}
@@ -420,7 +420,7 @@ export default function TrackerPage() {
                     <p
                       className={`mt-1 text-xxxxs tracking-wider uppercase leading-relaxed ${
                         task.completed
-                          ? "text-zinc-400/70 dark:text-zinc-655"
+                          ? "text-zinc-400/70 dark:text-zinc-650"
                           : "text-zinc-550 dark:text-zinc-450"
                       }`}
                     >
@@ -453,8 +453,8 @@ export default function TrackerPage() {
       )}
 
       {/* Quick info tip */}
-      <div className="flex items-start gap-3 rounded-3xl bg-zinc-50 dark:bg-zinc-900/10 border border-zinc-900/5 dark:border-zinc-100/5 p-4">
-        <Info className="h-4 w-4 text-[#2d5a27] dark:text-[#a3b899] shrink-0 mt-0.5" />
+      <div className="flex items-start gap-3 rounded-3xl bg-[#F5F5F5] dark:bg-zinc-900/10 border border-zinc-900/5 dark:border-zinc-100/5 p-4">
+        <Info className="h-4 w-4 text-[#2D6A4F] dark:text-[#52B788] shrink-0 mt-0.5" />
         <p className="text-xxxxs tracking-wider uppercase text-zinc-400 dark:text-zinc-500 leading-relaxed font-bold">
           Streak Multiplier rewards are applied automatically to offset stats. Complete at least one quest per 24-hour cycle to avoid streak reset.
         </p>

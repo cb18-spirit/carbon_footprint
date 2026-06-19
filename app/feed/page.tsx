@@ -242,19 +242,19 @@ export default function FeedPage() {
   return (
     <div className="flex-1 space-y-8 p-6 md:p-10 max-w-3xl mx-auto">
       {/* Header Section */}
-      <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between border-b border-[#1e3124]/10 dark:border-white/10 pb-6">
+      <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between border-b border-[#2D6A4F]/10 dark:border-white/10 pb-6">
         <div>
-          <h1 className="text-2xl md:text-3xl font-bold text-[#1e3124] dark:text-[#f2f5f3]">
+          <h1 className="text-2xl md:text-3xl font-bold text-[#2D6A4F] dark:text-[#52B788]">
             Eco Feed
           </h1>
-          <p className="text-xxxxs tracking-wider uppercase text-[#4a5f4e] dark:text-[#a2b5a5] mt-1 font-bold">
+          <p className="text-xxxxs tracking-wider uppercase text-zinc-450 dark:text-[#A0AEC0] mt-1 font-bold">
             Publish verified accomplishments, coordinate green initiatives, and exchange operational carbon tips.
           </p>
         </div>
       </div>
 
       {/* 1. Post Composer Panel */}
-      <div className="rounded-3xl glass-card p-6 border border-white/20">
+      <div className="rounded-3xl glass-card p-6">
         <form onSubmit={handleCreatePost} className="space-y-4">
           <div className="flex gap-4">
             <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full glass-button font-bold text-xxxxs tracking-wider uppercase text-zinc-800 dark:text-zinc-200">
@@ -265,14 +265,14 @@ export default function FeedPage() {
                 placeholder="Log your carbon offset event. What eco action did you take today?"
                 value={newPostContent}
                 onChange={(e) => setNewPostContent(e.target.value)}
-                className="w-full min-h-[80px] resize-none border-none bg-transparent py-2 text-xxs font-bold uppercase tracking-wider text-[#1e3124] outline-none placeholder:text-zinc-400 dark:text-zinc-100 dark:placeholder:text-zinc-650"
+                className="w-full min-h-[80px] resize-none border-none bg-transparent py-2 text-xxs font-bold uppercase tracking-wider text-[#2D3748] outline-none placeholder:text-zinc-400 dark:text-zinc-100 dark:placeholder:text-zinc-650"
               />
 
               {/* Mock Image Upload Frame preview */}
               {attachedImageName && (
                 <div className="flex items-center justify-between bg-black/5 dark:bg-white/5 border border-zinc-200 dark:border-zinc-800 px-4 py-2.5 text-xxxxs font-bold tracking-wider uppercase text-zinc-550 dark:text-zinc-400 rounded-2xl">
                   <span className="flex items-center gap-2">
-                    <ImageIcon className="h-3.5 w-3.5 text-cyan-600 dark:text-cyan-400" />
+                    <ImageIcon className="h-3.5 w-3.5 text-[#2D6A4F] dark:text-[#52B788]" />
                     Attached Proof: {attachedImageName}
                   </span>
                   <button
@@ -288,16 +288,16 @@ export default function FeedPage() {
           </div>
 
           {/* Interactive controls and dropdowns */}
-          <div className="flex flex-col sm:flex-row gap-3 pt-4 border-t border-[#1e3124]/5 dark:border-white/5">
+          <div className="flex flex-col sm:flex-row gap-3 pt-4 border-t border-[#2D6A4F]/5 dark:border-white/5">
             {/* Carbon Proof Tag Selector */}
             <div className="relative flex-1">
               <button
                 type="button"
                 onClick={() => setShowProofDropdown(!showProofDropdown)}
-                className="flex w-full items-center justify-between rounded-2xl border border-zinc-200 dark:border-zinc-850 px-4 py-2.5 text-xxxxs font-bold tracking-[0.15em] uppercase text-zinc-650 dark:text-zinc-350 bg-transparent hover:bg-zinc-50 dark:hover:bg-zinc-900"
+                className="flex w-full items-center justify-between rounded-2xl border border-zinc-200 dark:border-zinc-850 px-4 py-2.5 text-xxxxs font-bold tracking-[0.15em] uppercase text-[#2D6A4F] dark:text-[#52B788] bg-transparent hover:bg-[#2D6A4F] hover:text-white dark:hover:bg-[#52B788] dark:hover:text-[#0A0F0D] transition-all duration-300"
               >
                 <span className="flex items-center gap-2">
-                  <Tag className="h-3.5 w-3.5 text-[#2d5a27] dark:text-[#a3b899]" />
+                  <Tag className="h-3.5 w-3.5" />
                   {carbonProofOptions[selectedProofIndex].label}
                 </span>
                 <span className="text-zinc-400">▼</span>
@@ -305,7 +305,7 @@ export default function FeedPage() {
 
               {/* Dropdown Options */}
               {showProofDropdown && (
-                <div className="absolute top-11 left-0 right-0 z-10 rounded-2xl border border-zinc-250 dark:border-zinc-800 bg-[#faf8f5] dark:bg-zinc-950 shadow-lg overflow-hidden">
+                <div className="absolute top-11 left-0 right-0 z-10 rounded-2xl border border-zinc-250 dark:border-zinc-800 bg-white dark:bg-zinc-950 shadow-lg overflow-hidden">
                   {carbonProofOptions.map((opt, index) => (
                     <button
                       key={index}
@@ -314,7 +314,7 @@ export default function FeedPage() {
                         setSelectedProofIndex(index);
                         setShowProofDropdown(false);
                       }}
-                      className="flex w-full items-center px-4 py-2.5 text-left text-xxxxs font-bold tracking-wider uppercase hover:bg-zinc-100 dark:hover:bg-[#2d5a27]/10 text-zinc-700 dark:text-zinc-300"
+                      className="flex w-full items-center px-4 py-2.5 text-left text-xxxxs font-bold tracking-wider uppercase hover:bg-[#2D6A4F]/10 dark:hover:bg-[#52B788]/10 text-zinc-700 dark:text-zinc-300"
                     >
                       {opt.label}
                     </button>
@@ -327,10 +327,10 @@ export default function FeedPage() {
             <button
               type="button"
               onClick={handleAttachMockImage}
-              className={`flex items-center justify-center gap-2 rounded-full border px-5 py-2.5 text-xxxxs font-bold tracking-[0.15em] uppercase bg-transparent ${
+              className={`flex items-center justify-center gap-2 rounded-full border px-5 py-2.5 text-xxxxs font-bold tracking-[0.15em] uppercase transition-all duration-300 ${
                 attachedImageName
-                  ? "border-[#2d5a27]/30 text-[#2d5a27] dark:text-[#a3b899] bg-[#2d5a27]/5"
-                  : "border-zinc-200 dark:border-zinc-800 text-zinc-500 dark:text-zinc-400 hover:bg-zinc-50 dark:hover:bg-zinc-900"
+                  ? "border-[#2D6A4F]/30 text-[#2D6A4F] dark:text-[#52B788] bg-[#2D6A4F]/5"
+                  : "border-zinc-200 dark:border-zinc-800 text-[#2D6A4F] dark:text-[#52B788] hover:bg-[#2D6A4F] hover:text-white dark:hover:bg-[#52B788] dark:hover:text-[#0A0F0D]"
               }`}
             >
               <Upload className="h-3.5 w-3.5" />
@@ -340,7 +340,7 @@ export default function FeedPage() {
             {/* Submit post button */}
             <button
               type="submit"
-              className="flex items-center justify-center gap-2 rounded-full bg-[#1e3124] hover:bg-[#2d5a27] dark:bg-white dark:hover:bg-zinc-100 dark:text-zinc-950 text-white px-6 py-2.5 text-xxxxs font-bold tracking-[0.20em] uppercase transition-all"
+              className="flex items-center justify-center gap-2 rounded-full bg-[#2D6A4F] hover:bg-[#1B4332] dark:bg-[#52B788] dark:hover:bg-[#40916C] dark:text-[#0A0F0D] text-white px-6 py-2.5 text-xxxxs font-bold tracking-[0.20em] uppercase transition-all duration-300 cursor-pointer"
             >
               <span>Submit Post</span>
               <CheckCircle2 className="h-3.5 w-3.5" />
@@ -349,7 +349,6 @@ export default function FeedPage() {
         </form>
       </div>
 
-      {/* 2. Structured Social Timeline */}
       <div className="space-y-6">
         {posts.map((post) => {
           const isCommentsOpen = expandedCommentsPostId === post.id;
@@ -358,7 +357,7 @@ export default function FeedPage() {
           return (
             <div
               key={post.id}
-              className="rounded-3xl glass-card p-6 flex flex-col space-y-4 border border-white/20"
+              className="rounded-3xl glass-card p-6 flex flex-col space-y-4"
             >
               {/* Card Header */}
               <div className="flex items-center justify-between">
@@ -394,9 +393,9 @@ export default function FeedPage() {
 
               {/* 3. Premium Green 'Carbon Proof Badge' */}
               {post.proofValue && (
-                <div className="flex items-center gap-2 rounded-2xl bg-emerald-500/5 border border-emerald-500/25 px-4 py-2.5">
-                  <ShieldCheck className="h-4 w-4 text-[#2d5a27] dark:text-[#a3b899] shrink-0" />
-                  <span className="text-xxxxs font-bold uppercase tracking-[0.15em] text-[#2d5a27] dark:text-[#a3b899]">
+                <div className="flex items-center gap-2 rounded-2xl bg-[#2D6A4F]/5 border border-[#2D6A4F]/25 px-4 py-2.5">
+                  <ShieldCheck className="h-4 w-4 text-[#2D6A4F] dark:text-[#52B788] shrink-0" />
+                  <span className="text-xxxxs font-bold uppercase tracking-[0.15em] text-[#2D6A4F] dark:text-[#52B788]">
                     VERIFIED PROOF BADGE: saved -{post.proofValue}kg CO2 ({post.proofCategory})
                   </span>
                 </div>
@@ -412,21 +411,21 @@ export default function FeedPage() {
               <div className="flex items-center justify-around pb-1">
                 <button
                   onClick={() => handleLike(post.id)}
-                  className={`flex items-center gap-1.5 rounded-full px-4 py-2 text-xxxxs font-bold tracking-[0.20em] uppercase transition-colors ${
+                  className={`flex items-center gap-1.5 rounded-full px-4 py-2 text-xxxxs font-bold tracking-[0.20em] uppercase transition-all duration-300 ${
                     post.liked
-                      ? "text-emerald-600 dark:text-emerald-400"
-                      : "text-zinc-455 hover:text-zinc-800 dark:text-zinc-500 dark:hover:text-zinc-300"
+                      ? "text-[#2D6A4F] dark:text-[#52B788] bg-[#2D6A4F]/10 px-4"
+                      : "text-[#2D6A4F] hover:bg-[#2D6A4F] hover:text-white dark:text-[#52B788] dark:hover:bg-[#52B788] dark:hover:text-[#0A0F0D]"
                   }`}
                 >
-                  <ThumbsUp className={`h-3.5 w-3.5 ${post.liked ? "fill-emerald-600/10" : ""}`} />
+                  <ThumbsUp className={`h-3.5 w-3.5 ${post.liked ? "fill-[#2D6A4F]/10" : ""}`} />
                   Like
                 </button>
                 <button
                   onClick={() => toggleCommentsExpansion(post.id)}
-                  className={`flex items-center gap-1.5 rounded-full px-4 py-2 text-xxxxs font-bold tracking-[0.20em] uppercase transition-colors ${
+                  className={`flex items-center gap-1.5 rounded-full px-4 py-2 text-xxxxs font-bold tracking-[0.20em] uppercase transition-all duration-300 ${
                     isCommentsOpen
-                      ? "text-zinc-950 dark:text-white"
-                      : "text-zinc-455 hover:text-zinc-800 dark:text-zinc-500 dark:hover:text-zinc-350"
+                      ? "text-white bg-[#2D6A4F] px-4 dark:text-[#0A0F0D] dark:bg-[#52B788]"
+                      : "text-[#2D6A4F] hover:bg-[#2D6A4F] hover:text-white dark:text-[#52B788] dark:hover:bg-[#52B788] dark:hover:text-[#0A0F0D]"
                   }`}
                 >
                   <MessageSquare className="h-3.5 w-3.5" />
@@ -434,10 +433,10 @@ export default function FeedPage() {
                 </button>
                 <button
                   onClick={() => handleShare(post.id)}
-                  className={`flex items-center gap-1.5 rounded-full px-4 py-2 text-xxxxs font-bold tracking-[0.20em] uppercase transition-colors ${
+                  className={`flex items-center gap-1.5 rounded-full px-4 py-2 text-xxxxs font-bold tracking-[0.20em] uppercase transition-all duration-300 ${
                     isShareOpen
-                      ? "text-cyan-600 dark:text-cyan-400"
-                      : "text-zinc-455 hover:text-zinc-800 dark:text-zinc-500 dark:hover:text-zinc-300"
+                      ? "text-white bg-[#2D6A4F] px-4 dark:text-[#0A0F0D] dark:bg-[#52B788]"
+                      : "text-[#2D6A4F] hover:bg-[#2D6A4F] hover:text-white dark:text-[#52B788] dark:hover:bg-[#52B788] dark:hover:text-[#0A0F0D]"
                   }`}
                 >
                   <Share2 className="h-3.5 w-3.5" />
@@ -447,16 +446,16 @@ export default function FeedPage() {
 
               {/* 4. Share Overlay Trigger */}
               {isShareOpen && (
-                <div className="bg-black/5 dark:bg-white/10 backdrop-blur-md border border-zinc-900/5 dark:border-white/10 p-4 rounded-2xl transition-all animate-slide-up">
+                <div className="bg-[#F5F5F5] dark:bg-zinc-900/40 border border-[#2D6A4F]/10 p-4 rounded-2xl transition-all animate-slide-up">
                   <div className="flex flex-col sm:flex-row items-center justify-between gap-3">
                     <div className="flex items-center gap-2 text-xxxxs font-bold uppercase tracking-wider text-zinc-500 dark:text-zinc-400">
-                      <LinkIcon className="h-3.5 w-3.5 text-cyan-600 dark:text-cyan-455" />
+                      <LinkIcon className="h-3.5 w-3.5 text-[#2D6A4F] dark:text-[#74C69D]" />
                       Mock URL: https://terracarbon.app/feed/{post.id}
                     </div>
                     <button
                       type="button"
                       onClick={() => handleCopyLink(post.id)}
-                      className="rounded-full bg-zinc-950 dark:bg-white text-white dark:text-zinc-950 px-4 py-2 text-xxxxs font-bold tracking-wider uppercase transition-all"
+                      className="rounded-full bg-[#2D6A4F] hover:bg-[#1B4332] text-white dark:bg-[#74C69D] dark:hover:bg-[#2D6A4F] dark:text-zinc-950 dark:hover:text-white px-4 py-2 text-xxxxs font-bold tracking-wider uppercase transition-all duration-300 cursor-pointer"
                     >
                       {copiedSharePostId === post.id ? "✓ Copied!" : "Copy Link"}
                     </button>
@@ -466,31 +465,31 @@ export default function FeedPage() {
 
               {/* 4. Glassmorphic Comments Overlay Expansion State */}
               {isCommentsOpen && (
-                <div className="bg-black/5 dark:bg-white/10 backdrop-blur-md border border-zinc-900/5 dark:border-white/10 p-4 rounded-2xl space-y-4 transition-all animate-slide-up">
-                  <div className="text-xxxxs font-bold uppercase tracking-wider text-zinc-450 dark:text-zinc-400 pb-2 border-b border-zinc-900/5 dark:border-white/5">
+                <div className="bg-[#F5F5F5] dark:bg-zinc-900/40 border border-[#2D6A4F]/10 p-4 rounded-2xl space-y-4 transition-all animate-slide-up">
+                  <div className="text-xxxxs font-bold uppercase tracking-wider text-[#2D6A4F] dark:text-[#74C69D] pb-2 border-b border-[#2D6A4F]/5 dark:border-white/5">
                     Discussion Thread ({post.comments.length})
                   </div>
 
                   {post.comments.length > 0 ? (
                     <div className="space-y-3 max-h-[200px] overflow-y-auto pr-1">
                       {post.comments.map((comm) => (
-                        <div key={comm.id} className="flex gap-2.5 items-start bg-black/5 dark:bg-white/5 border border-zinc-900/5 dark:border-zinc-100/5 rounded-2xl p-3">
+                        <div key={comm.id} className="flex gap-2.5 items-start bg-white/80 dark:bg-zinc-800/40 border border-[#2D6A4F]/5 dark:border-zinc-100/5 rounded-2xl p-3">
                           <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full glass-button text-zinc-700 text-xxxxs font-bold tracking-wider uppercase dark:text-zinc-300">
                             {comm.avatar}
                           </div>
                           <div className="flex-1 space-y-0.5">
                             <div className="flex items-center justify-between">
-                              <span className="text-xxxxs font-bold uppercase tracking-[0.15em] text-zinc-800 dark:text-zinc-200">{comm.author}</span>
+                              <span className="text-xxxxs font-bold uppercase tracking-[0.15em] text-[#2D6A4F] dark:text-[#74C69D]">{comm.author}</span>
                               <span className="text-xxxxs text-zinc-400 dark:text-zinc-550">{comm.time}</span>
                             </div>
-                            <p className="text-xxxxs tracking-wider uppercase text-zinc-650 dark:text-zinc-300 leading-normal">{comm.content}</p>
+                            <p className="text-xxxxs tracking-wider uppercase text-zinc-800 dark:text-zinc-300 leading-normal">{comm.content}</p>
                           </div>
                         </div>
                       ))}
                     </div>
                   ) : (
-                    <div className="text-center py-4 text-xxxxs font-bold uppercase tracking-wider text-zinc-400 dark:text-zinc-550 flex items-center justify-center gap-1.5">
-                      <AlertCircle className="h-4 w-4" />
+                    <div className="text-center py-4 text-xxxxs font-bold uppercase tracking-wider text-zinc-450 dark:text-zinc-550 flex items-center justify-center gap-1.5">
+                      <AlertCircle className="h-4 w-4 text-[#2D6A4F] dark:text-[#74C69D]" />
                       No comments on this post yet.
                     </div>
                   )}
@@ -505,11 +504,11 @@ export default function FeedPage() {
                       placeholder="Add to the verified offset discussion thread..."
                       value={commentInputs[post.id] || ""}
                       onChange={(e) => setCommentInputs({ ...commentInputs, [post.id]: e.target.value })}
-                      className="w-full rounded-2xl border border-zinc-200 bg-transparent px-3 py-2.5 text-xxs font-bold uppercase tracking-wider outline-none transition focus:border-zinc-950 dark:border-zinc-800 dark:text-zinc-200 dark:focus:border-white"
+                      className="w-full rounded-2xl border border-[#2D6A4F]/20 bg-white/80 dark:bg-black/20 px-3 py-2.5 text-xxs font-bold uppercase tracking-wider outline-none transition focus:border-[#2D6A4F] dark:border-zinc-850 dark:text-zinc-200 dark:focus:border-[#74C69D]"
                     />
                     <button
                       type="submit"
-                      className="rounded-full border border-zinc-200 dark:border-zinc-800 bg-transparent p-2.5 text-zinc-650 hover:text-zinc-950 dark:text-zinc-400 dark:hover:text-white transition-colors h-9 w-9 flex items-center justify-center shrink-0"
+                      className="rounded-full border border-[#2D6A4F]/20 bg-transparent p-2.5 text-[#2D6A4F] hover:bg-[#2D6A4F] hover:text-white dark:border-[#74C69D]/20 dark:text-[#74C69D] dark:hover:bg-[#74C69D] dark:hover:text-zinc-950 transition-all duration-300 h-9 w-9 flex items-center justify-center shrink-0 cursor-pointer"
                     >
                       <Send className="h-3.5 w-3.5" />
                     </button>

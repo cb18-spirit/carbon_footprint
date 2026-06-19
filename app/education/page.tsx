@@ -195,7 +195,7 @@ export default function EducationPage() {
   if (!isMounted) {
     return (
       <div className="flex flex-1 items-center justify-center p-12">
-        <div className="h-10 w-10 rounded-full border border-dashed border-[#2d5a27] animate-spin" />
+        <div className="h-10 w-10 rounded-full border border-dashed border-[#2D6A4F] animate-spin" />
       </div>
     );
   }
@@ -203,25 +203,25 @@ export default function EducationPage() {
   return (
     <div className="flex-1 space-y-8 p-6 md:p-10 max-w-5xl mx-auto relative min-h-screen pb-24">
       {/* Header section */}
-      <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between border-b border-[#1e3124]/10 dark:border-white/10 pb-6">
+      <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between border-b border-[#2D6A4F]/10 dark:border-white/10 pb-6">
         <div>
-          <h1 className="text-2xl md:text-3xl font-bold text-[#1e3124] dark:text-[#f2f5f3]">
+          <h1 className="text-2xl md:text-3xl font-bold text-[#2D6A4F] dark:text-[#52B788]">
             Green Knowledge Hub
           </h1>
-          <p className="text-xxxxs tracking-wider uppercase text-[#4a5f4e] dark:text-[#a2b5a5] mt-1 font-bold">
+          <p className="text-xxxxs tracking-wider uppercase text-zinc-450 dark:text-[#A0AEC0] mt-1 font-bold">
             Expand your climate literacy and bridge learning into actionable daily quests.
           </p>
         </div>
 
         {/* Search bar */}
         <div className="relative w-full md:w-80">
-          <Search className="absolute left-4 top-3.5 h-4 w-4 text-[#4a5f4e] dark:text-[#a2b5a5]" />
+          <Search className="absolute left-4 top-3.5 h-4 w-4 text-[#2D6A4F] dark:text-[#52B788]" />
           <input
             type="text"
             placeholder="Search resources..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="w-full rounded-full border border-zinc-200 dark:border-zinc-800 bg-transparent py-2.5 pl-11 pr-4 text-xxs font-bold uppercase tracking-wider outline-none transition-all focus:border-[#2d5a27] dark:text-zinc-100 dark:focus:border-white"
+            className="w-full rounded-full border border-zinc-200 dark:border-zinc-800 bg-transparent py-2.5 pl-11 pr-4 text-xxs font-bold uppercase tracking-wider outline-none transition-all focus:border-[#2D6A4F] dark:text-zinc-100 dark:focus:border-white"
           />
         </div>
       </div>
@@ -236,8 +236,8 @@ export default function EducationPage() {
               onClick={() => setSelectedCategory(cat)}
               className={`rounded-full px-5 py-2 text-xxxxs font-bold tracking-[0.2em] uppercase transition-all cursor-pointer border ${
                 isActive
-                  ? "bg-[#2d5a27] text-white border-[#2d5a27] dark:bg-white dark:text-[#1e3124]"
-                  : "bg-transparent text-zinc-500 hover:text-zinc-800 dark:text-zinc-400 dark:hover:text-zinc-200 border-transparent"
+                  ? "bg-[#2D6A4F] text-white border-[#2D6A4F] dark:bg-white dark:text-[#2D6A4F]"
+                  : "bg-transparent text-[#2D6A4F] hover:bg-[#2D6A4F] hover:text-white border-transparent transition-all duration-300"
               }`}
             >
               {cat === "Zero-Waste" ? "Zero Waste" : cat}
@@ -254,22 +254,22 @@ export default function EducationPage() {
             return (
               <article
                 key={article.id}
-                className="group flex flex-col justify-between rounded-3xl glass-card p-6 border border-white/20"
+                className="group flex flex-col justify-between rounded-3xl glass-card p-6"
               >
                 <div>
                   {/* Category and Read time row */}
                   <div className="flex items-center justify-between mb-4">
-                    <span className="rounded-full bg-[#2d5a27]/5 border border-[#2d5a27]/25 px-3 py-1 text-xxxxs font-bold uppercase tracking-wider text-[#2d5a27] dark:text-[#a3b899]">
+                    <span className="rounded-full bg-[#2D6A4F]/5 border border-[#2D6A4F]/25 px-3 py-1 text-xxxxs font-bold uppercase tracking-wider text-[#2D6A4F] dark:text-[#52B788]">
                       {article.category === "Zero-Waste" ? "Zero Waste" : article.category}
                     </span>
                     <span className="flex items-center gap-1 text-xxxxs font-bold uppercase tracking-wider text-zinc-400">
-                      <Clock className="h-3.5 w-3.5" />
+                      <Clock className="h-3.5 w-3.5 text-[#2D6A4F] dark:text-[#52B788]" />
                       {article.readTime}
                     </span>
                   </div>
 
                   {/* Title and Excerpt */}
-                  <h3 className="text-sm font-bold uppercase tracking-[0.05em] text-[#1e3124] group-hover:text-[#2d5a27] dark:text-zinc-100 dark:group-hover:text-white transition-colors duration-200 line-clamp-2 font-sans">
+                  <h3 className="text-sm font-bold uppercase tracking-[0.05em] text-[#2D6A4F] group-hover:text-[#1B4332] dark:text-zinc-100 dark:group-hover:text-white transition-colors duration-200 line-clamp-2 font-sans">
                     {article.title}
                   </h3>
                   <p className="mt-2 text-xxxxs tracking-wider uppercase leading-relaxed text-zinc-500 dark:text-zinc-450 line-clamp-3">
@@ -278,27 +278,27 @@ export default function EducationPage() {
                 </div>
 
                 {/* Card Footer: Impact and Action Bridge */}
-                <div className="mt-6 border-t border-[#1e3124]/5 dark:border-white/5 pt-5">
+                <div className="mt-6 border-t border-[#2D6A4F]/5 dark:border-white/5 pt-5">
                   <div className="flex items-center justify-between gap-4 mb-4">
                     <div className="flex items-center gap-1.5 text-xxxxs font-bold uppercase tracking-widest text-zinc-450">
-                      <TrendingDown className="h-3.5 w-3.5 text-[#2d5a27]" />
+                      <TrendingDown className="h-3.5 w-3.5 text-[#2D6A4F] dark:text-[#52B788]" />
                       CO2 Impact
                     </div>
-                    <span className="text-xs font-bold tracking-wider text-[#2d5a27] dark:text-[#a3b899]">
+                    <span className="text-xs font-bold tracking-wider text-[#2D6A4F] dark:text-[#52B788]">
                       -{article.co2Saved} kg/day
                     </span>
                   </div>
 
                   {/* 3. Action Bridge Feature */}
                   {isAdded ? (
-                    <div className="flex w-full items-center justify-center gap-1.5 rounded-full bg-[#2d5a27]/5 border border-[#2d5a27]/20 py-3 text-center text-xxxxs font-bold tracking-[0.15em] uppercase text-[#2d5a27] dark:text-[#a3b899] select-none">
+                    <div className="flex w-full items-center justify-center gap-1.5 rounded-full bg-[#2D6A4F]/5 border border-[#2D6A4F]/20 py-3 text-center text-xxxxs font-bold tracking-[0.15em] uppercase text-[#2D6A4F] dark:text-[#52B788] select-none">
                       <Check className="h-3.5 w-3.5 stroke-[3]" />
                       Quest Added!
                     </div>
                   ) : (
                     <button
                       onClick={() => handleAddQuest(article)}
-                      className="flex w-full items-center justify-center gap-1.5 rounded-full bg-[#1e3124] hover:bg-[#2d5a27] text-white dark:bg-white dark:hover:bg-zinc-100 dark:text-zinc-950 py-3 text-center text-xxxxs font-bold tracking-[0.2em] uppercase cursor-pointer"
+                      className="flex w-full items-center justify-center gap-1.5 rounded-full bg-[#2D6A4F] hover:bg-[#1B4332] text-white dark:bg-[#52B788] dark:hover:bg-[#40916C] dark:text-[#0A0F0D] py-3 text-center text-xxxxs font-bold tracking-[0.2em] uppercase cursor-pointer transition-all duration-300"
                     >
                       <Plus className="h-3.5 w-3.5" />
                       Add Quest
@@ -323,10 +323,10 @@ export default function EducationPage() {
         {toasts.map((toast) => (
           <div
             key={toast.id}
-            className="flex items-start justify-between gap-3 rounded-3xl glass-panel p-4 shadow-xl animate-slide-up border border-white/20"
+            className="flex items-start justify-between gap-3 rounded-3xl glass-panel p-4 shadow-xl animate-slide-up"
           >
             <div className="flex items-start gap-3">
-              <div className="h-8 w-8 flex items-center justify-center rounded-full glass-button text-emerald-600 dark:text-emerald-400 shrink-0">
+              <div className="h-8 w-8 flex items-center justify-center rounded-full glass-button text-[#2D6A4F] dark:text-[#52B788] shrink-0">
                 <Bell className="h-4 w-4" />
               </div>
               <div>

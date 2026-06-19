@@ -46,13 +46,13 @@ export default function Navbar() {
   }, [pathname]); // Also refresh stats when pathname changes (navigation)
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 h-16 w-full bg-[#faf8f5]/85 dark:bg-[#0f1812]/85 backdrop-blur-md border-b border-[#1e3124]/5 dark:border-white/5 transition-all duration-300">
+    <nav className="fixed top-0 left-0 right-0 z-50 h-16 w-full bg-white/90 dark:bg-[#0A0F0D]/90 backdrop-blur-md border-b border-[#2D6A4F]/5 dark:border-[#52B788]/5 transition-all duration-300">
       <div className="mx-auto flex h-full max-w-7xl items-center justify-between px-6 md:px-10">
         
         {/* Left: Brand/Logo */}
         <Link href="/" className="flex items-center gap-2 group">
-          <Leaf className="h-4.5 w-4.5 text-[#2d5a27] dark:text-[#a3b899] group-hover:rotate-12 transition-transform duration-300" />
-          <span className="text-xxs font-black tracking-[0.25em] text-[#1e3124] dark:text-[#f2f5f3] uppercase transition-opacity group-hover:opacity-85 font-sans">
+          <Leaf className="h-4.5 w-4.5 text-[#2D6A4F] dark:text-[#52B788] group-hover:rotate-12 transition-transform duration-300" />
+          <span className="text-xxs font-black tracking-[0.25em] text-[#2D6A4F] dark:text-[#E2E8F0] uppercase transition-opacity group-hover:opacity-85 font-sans">
             TerraCarbon
           </span>
         </Link>
@@ -65,10 +65,10 @@ export default function Navbar() {
               <Link
                 key={item.href}
                 href={item.href}
-                className={`text-xxxxs font-bold tracking-[0.2em] uppercase transition-all px-3 py-1.5 rounded-full font-sans ${
+                className={`text-xxxxs font-bold tracking-[0.25em] uppercase transition-all px-3.5 py-2 rounded-full font-sans ${
                   isActive
-                    ? "bg-[#2d5a27]/10 text-[#2d5a27] dark:bg-[#a3b899]/15 dark:text-[#a3b899]"
-                    : "text-zinc-500 hover:text-zinc-800 dark:text-zinc-400 dark:hover:text-zinc-200"
+                    ? "bg-[#2D6A4F] text-white dark:bg-[#52B788] dark:text-[#0A0F0D] shadow-sm"
+                    : "text-[#2D6A4F] hover:bg-[#2D6A4F] hover:text-white dark:text-[#52B788] dark:hover:bg-[#52B788] dark:hover:text-[#0A0F0D]"
                 }`}
               >
                 {item.name}
@@ -81,18 +81,18 @@ export default function Navbar() {
         <div className="flex items-center gap-4">
           <Link
             href="/tracker"
-            className="hidden sm:flex items-center gap-2 rounded-full px-4 py-1.5 text-xxxxs font-bold tracking-[0.15em] uppercase glass-button text-zinc-800 dark:text-zinc-200 font-sans"
+            className="hidden sm:flex items-center gap-2 rounded-full px-4 py-1.5 text-xxxxs font-bold tracking-[0.15em] uppercase glass-button text-[#2D6A4F] hover:bg-[#2D6A4F] hover:text-white dark:text-[#52B788] dark:hover:bg-[#52B788] dark:hover:text-[#0A0F0D] font-sans transition-all duration-300"
           >
-            <Flame className="h-3.5 w-3.5 text-orange-650 animate-pulse fill-orange-500/10" />
+            <Flame className="h-3.5 w-3.5 text-orange-500 animate-pulse fill-orange-500/10" />
             <span>{streak} Days</span>
-            <span className="text-zinc-300 dark:text-zinc-700">|</span>
+            <span className="opacity-30">|</span>
             <span>{points} Pts</span>
           </Link>
 
           {/* Mobile Menu Button */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="rounded-full p-2 text-zinc-500 hover:bg-zinc-100 hover:text-zinc-800 dark:text-zinc-400 dark:hover:bg-zinc-900 dark:hover:text-zinc-200 md:hidden"
+            className="rounded-full p-2 text-[#2D6A4F] hover:bg-[#2D6A4F]/10 dark:text-[#52B788] dark:hover:bg-[#52B788]/10 md:hidden"
             aria-label="Toggle menu"
           >
             {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
@@ -102,7 +102,7 @@ export default function Navbar() {
 
       {/* Mobile Navigation Drawer */}
       {mobileMenuOpen && (
-        <div className="absolute top-16 left-0 right-0 w-full bg-[#faf8f5] dark:bg-[#0f1812] border-b border-[#1e3124]/5 dark:border-white/5 py-4 px-6 flex flex-col gap-3 md:hidden shadow-lg font-sans">
+        <div className="absolute top-16 left-0 right-0 w-full bg-white dark:bg-[#0A0F0D] border-b border-[#2D6A4F]/10 dark:border-[#52B788]/10 py-4 px-6 flex flex-col gap-3 md:hidden shadow-lg font-sans">
           {navItems.map((item) => {
             const isActive = pathname === item.href;
             return (
@@ -112,8 +112,8 @@ export default function Navbar() {
                 onClick={() => setMobileMenuOpen(false)}
                 className={`text-xxxxs font-bold tracking-[0.2em] uppercase py-2.5 px-4 rounded-full transition-all ${
                   isActive
-                    ? "bg-[#2d5a27]/10 text-[#2d5a27] dark:bg-[#a3b899]/15 dark:text-[#a3b899]"
-                    : "text-zinc-500 hover:text-zinc-800 dark:text-zinc-400 dark:hover:text-zinc-200"
+                    ? "bg-[#2D6A4F] text-white dark:bg-[#52B788] dark:text-[#0A0F0D]"
+                    : "text-[#2D6A4F] hover:bg-[#2D6A4F] hover:text-white dark:text-[#52B788] dark:hover:bg-[#52B788] dark:hover:text-[#0A0F0D]"
                 }`}
               >
                 {item.name}
@@ -124,7 +124,7 @@ export default function Navbar() {
           <Link
             href="/tracker"
             onClick={() => setMobileMenuOpen(false)}
-            className="flex items-center justify-center gap-2 rounded-full py-2.5 text-xxxxs font-bold tracking-[0.15em] uppercase glass-button text-zinc-800 dark:text-zinc-200 mt-2"
+            className="flex items-center justify-center gap-2 rounded-full py-2.5 text-xxxxs font-bold tracking-[0.15em] uppercase glass-button text-[#2D6A4F] hover:bg-[#2D6A4F] hover:text-white dark:text-[#52B788] dark:hover:bg-[#52B788] dark:hover:text-[#0A0F0D] mt-2 transition-all duration-300"
           >
             <Flame className="h-3.5 w-3.5 text-orange-500" />
             <span>{streak} Days • {points} Points</span>
